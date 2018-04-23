@@ -18,8 +18,7 @@ authRoutes.post(
     failureRedirect: '/auth/login',
     failureFlash: true,
     passReqToCallback: true,
-  }),
-  console.log(req.body)
+  })
 );
 
 authRoutes.get('/signup', (req, res, next) => {
