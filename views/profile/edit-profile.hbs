@@ -1,0 +1,29 @@
+<h2> Edit my profile</h2>
+
+<form action="/auth/edit-profile" method="POST" id="form-container">
+  <label>Username</label>
+  <input id="username" class="form-control" type="username" name="username" placeholder="Your Username">
+
+  <br>
+  <br>
+
+  <label>Email</label>
+  <input id="email" class="form-control" type="email" name="email" placeholder="Your Email">
+
+  <br>
+  <br>
+
+  <label for="password">Password</label>
+  <input id="password" class="form-control" type="password" name="password" placeholder="Your Password">
+  <br> {{#if message }}
+  <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br>
+  <br>
+
+  <button class="btn-block btn-lg btn-primary">Edit Profile</button>
+
+  <a href="/map/home-page">Back To The Map</a>
+  </p>
+</form>

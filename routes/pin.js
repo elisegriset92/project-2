@@ -3,4 +3,6 @@ const router = express.Router();
 
 /* GET pin page */
 
+// DELETE
+
 module.exports = router;
