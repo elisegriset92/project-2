@@ -18,7 +18,8 @@ authRoutes.post(
     failureRedirect: '/auth/login',
     failureFlash: true,
     passReqToCallback: true,
-  })
+  }),
+  console.log(req.body)
 );
 
 authRoutes.get('/signup', (req, res, next) => {
@@ -36,9 +37,9 @@ authRoutes.post('/signup', (req, res, next) => {
     return;
   }
 
-  User.findOne({username}, 'username', (err, user) => {
+  User.findOne({email}, 'email', (err, user) => {
     if (user !== null) {
-      res.render('auth/signup', {message: 'The username already exists'});
+      res.render('auth/signup', {message: 'The email already exists'});
       return;
     }
 
