@@ -2,31 +2,31 @@
 
 <form action="/auth/edit-profile" method="POST" id="form-container">
   <label>First Name</label>
-  <input id="firstName" class="form-control" type="firstName" name="firstName" placeholder="Your First Name">
+  <input id="firstName" class="form-control" type="firstName" name="firstName" value="{{blahUser.firstName}}">
 
   <br>
   <br>
 
   <label>Last Name</label>
-  <input id="lastName" class="form-control" type="lastName" name="lastName" placeholder="Your Last Name">
+  <input id="lastName" class="form-control" type="lastName" name="lastName" value="{{blahUser.lastName}}">
 
   <br>
   <br>
 
   <label>Username</label>
-  <input id="username" class="form-control" type="username" name="username" placeholder="Your Username">
+  <input id="username" class="form-control" type="username" name="username" value="{{blahUser.username}}">
 
   <br>
   <br>
 
   <label>Email</label>
-  <input id="email" class="form-control" type="email" name="email" placeholder="Your Email">
+  <input id="email" class="form-control" type="email" name="email" value="{{blahUser.email}}">
 
   <br>
   <br>
 
   <label for="password">Password</label>
-  <input id="password" class="form-control" type="password" name="password" placeholder="Your Password">
+  <input id="password" class="form-control" type="password" name="password" value="{{blahUser.password}}">
   <br> {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
