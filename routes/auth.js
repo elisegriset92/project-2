@@ -11,10 +11,14 @@ authRoutes.get('/login', (req, res, next) => {
   res.render('auth/login', {message: req.flash('error')});
 });
 
+authRoutes.get('/loading', (req, res, next) => {
+  res.render('auth/loading');
+});
+
 authRoutes.post(
   '/login',
   passport.authenticate('local', {
-    successRedirect: '/map/home-page',
+    successRedirect: '/auth/loading',
     failureRedirect: '/auth/login',
     failureFlash: true,
     passReqToCallback: true,
