@@ -18,6 +18,9 @@ nav button {
   padding: 15px;
   float: right; }
 
+.btn-warning {
+  float: right; }
+
 .sk-folding-cube {
   margin: 30px auto;
   width: 120px;
@@ -100,17 +103,5 @@ nav button {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
-
-.stylish-input-group .input-group-addon {
-  background: white !important; }
-
-.stylish-input-group .form-control {
-  border-right: 0;
-  box-shadow: 0 0 0;
-  border-color: #ccc; }
-
-.stylish-input-group button {
-  border: 0;
-  background: transparent; }
 
 /*# sourceMappingURL=style.css.map */
