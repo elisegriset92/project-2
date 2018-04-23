@@ -14,4 +14,8 @@ a {
 .index {
   text-align: center; }
 
+nav {
+  background-color: grey;
+  padding: 15px; }
+
 /*# sourceMappingURL=style.css.map */
