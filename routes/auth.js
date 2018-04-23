@@ -65,7 +65,7 @@ authRoutes.post('/signup', (req, res, next) => {
 
 authRoutes.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/');
+  res.redirect('/log-out');
 });
 
 module.exports = authRoutes;
