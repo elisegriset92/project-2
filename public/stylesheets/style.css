@@ -1,5 +1,7 @@
 body {
-  font-family: 'Overpass', sans-serif; }
+  font-family: 'Overpass', sans-serif;
+  margin-top: 20px;
+  margin-right: 20px; }
 
 a {
   color: #00b7ff; }
@@ -30,6 +32,9 @@ nav button {
 
 .btn-warning {
   float: right; }
+
+nav {
+  background-color: gray; }
 
 .sk-folding-cube {
   margin: 30px auto;
