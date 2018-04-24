@@ -60,10 +60,16 @@ axios
       marker.addListener('click', function() {
         infowindow.open(map, marker);
       });
+      console.log(onePlace);
       var contentString =
-        '<p id="firstHeading" class="firstHeading">{{onePlace.name}}</p>' +
+        '<p id="firstHeading" class="firstHeading">{{name}}</p>' +
         '<a href="/views/pin/view-pin.hbs">' +
-        'view pins</a> ';
+        'View Pins</a> ' +
+        '<br>' +
+        '<a href="/views/pin/add-pin.hbs">' +
+        'Add a Pin</a> ' +
+        '</div>' +
+        '</div>';
 
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
