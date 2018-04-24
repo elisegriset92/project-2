@@ -92,4 +92,7 @@ app.use('/', pinRoute);
 const profileRoute = require('./routes/profile');
 app.use('/', profileRoute);
 
+const placeRoute = require('./routes/place');
+app.use('/', placeRoute);
+
 module.exports = app;
