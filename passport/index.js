@@ -2,6 +2,7 @@ const passport = require('passport');
 
 require('./serializers');
 require('./localStrategy');
+require('./google-strategy');
 
 function passportSetup(app) {
   //  add properties & methods to the "req" object in routes

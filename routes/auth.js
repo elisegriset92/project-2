@@ -15,6 +15,25 @@ authRoutes.get('/loading', (req, res, next) => {
   res.render('auth/loading');
 });
 
+authRoutes.get(
+  '/google/login',
+  passport.authenticate('google', {
+    scope: [
+      'https://www.googleapis.com/auth/plus.login',
+      'https://www.googleapis.com/auth/plus.profile.emails.read',
+    ],
+  })
+);
+authRoutes.get(
+  '/google/success',
+  passport.authenticate('google', {
+    successRedirect: '/map/home-page',
+    successFlash: 'Google log in Success!!!',
+    failureRedirect: '/auth/signup',
+    failureFlash: 'Google log in Failure...',
+  })
+);
+
 authRoutes.post(
   '/login',
   passport.authenticate('local', {

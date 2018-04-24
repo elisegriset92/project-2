@@ -14,6 +14,9 @@ a {
 .index {
   text-align: center; }
 
+#form-container > a {
+  text-align: center; }
+
 nav button {
   padding: 15px;
   float: right; }
@@ -77,29 +80,35 @@ nav button {
   animation-delay: 0.9s; }
 
 @-webkit-keyframes sk-foldCubeAngle {
-  0%, 10% {
+  0%,
+  10% {
     -webkit-transform: perspective(140px) rotateX(-180deg);
     transform: perspective(140px) rotateX(-180deg);
     opacity: 0; }
-  25%, 75% {
+  25%,
+  75% {
     -webkit-transform: perspective(140px) rotateX(0deg);
     transform: perspective(140px) rotateX(0deg);
     opacity: 1; }
-  90%, 100% {
+  90%,
+  100% {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
 
 @keyframes sk-foldCubeAngle {
-  0%, 10% {
+  0%,
+  10% {
     -webkit-transform: perspective(140px) rotateX(-180deg);
     transform: perspective(140px) rotateX(-180deg);
     opacity: 0; }
-  25%, 75% {
+  25%,
+  75% {
     -webkit-transform: perspective(140px) rotateX(0deg);
     transform: perspective(140px) rotateX(0deg);
     opacity: 1; }
-  90%, 100% {
+  90%,
+  100% {
     -webkit-transform: perspective(140px) rotateY(180deg);
     transform: perspective(140px) rotateY(180deg);
     opacity: 0; } }
