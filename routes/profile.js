@@ -5,12 +5,20 @@ const User = require('../models/User');
 /* GET profile page */
 
 router.get('/edit', (req, res, next) => {
+  if (!req.user) {
+    // res.flash('error', 'You must be logged in to see that');
+    res.redirect('/auth/login');
+  }
   res.render('profile/edit-profile');
 });
 
 // update profile informations
 
 router.post('/auth/edit-profile', (req, res, next) => {
+  if (!req.user) {
+    // res.flash('error', 'You must be logged in to see that');
+    res.redirect('/auth/login');
+  }
   const {firstName, lastName, username, email, password} = req.body;
 
   User.findByIdAndUpdate(

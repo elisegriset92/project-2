@@ -4,7 +4,10 @@ const router = express.Router();
 /* GET map page - home page */
 
 router.get('/map/home-page', (req, res, next) => {
-  console.log('hahahahah');
+  if (!req.user) {
+    // res.flash('error', 'You must be logged in to see that');
+    res.redirect('/auth/login');
+  }
   res.render('map/home-page');
 });
 
