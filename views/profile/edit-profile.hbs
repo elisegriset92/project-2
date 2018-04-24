@@ -1,32 +1,33 @@
+<div align="center">
 <h2> Edit my profile</h2>
-
+<br><br>
 <form action="/auth/edit-profile" method="POST" id="form-container">
   <label>First Name</label>
-  <input id="firstName" class="form-control" type="firstName" name="firstName" value="{{blahUser.firstName}}">
+  <input id="firstName" class="form-control col-4 signup" type="firstName" name="firstName" value="{{blahUser.firstName}}">
 
   <br>
   <br>
 
   <label>Last Name</label>
-  <input id="lastName" class="form-control" type="lastName" name="lastName" value="{{blahUser.lastName}}">
+  <input id="lastName" class="form-control col-4 signup" type="lastName" name="lastName" value="{{blahUser.lastName}}">
 
   <br>
   <br>
 
   <label>Username</label>
-  <input id="username" class="form-control" type="username" name="username" value="{{blahUser.username}}">
+  <input id="username" class="form-control col-4 signup" type="username" name="username" value="{{blahUser.username}}">
 
   <br>
   <br>
 
   <label>Email</label>
-  <input id="email" class="form-control" type="email" name="email" value="{{blahUser.email}}">
+  <input id="email" class="form-control col-4 signup" type="email" name="email" value="{{blahUser.email}}">
 
   <br>
   <br>
 
   <label for="password">Password</label>
-  <input id="password" class="form-control" type="password" name="password" value="{{blahUser.password}}">
+  <input id="password" class="form-control col-4 signup" type="password" name="password" value="{{blahUser.password}}">
   <br> {{#if message }}
   <div class="error-message">{{ message }}</div>
   {{/if}}
@@ -34,8 +35,9 @@
   <br>
   <br>
 
-  <button class="btn-block btn-lg btn-primary">Edit Profile</button>
-
+  <button class="btn-lg btn-primary">Edit Profile</button>
+<br><br>
   <a href="/map/home-page">Back To The Map</a>
   </p>
 </form>
+</div>
