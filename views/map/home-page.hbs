@@ -6,12 +6,32 @@
 <br>
 <p class="text-center">Do you want to know what the Q looks like in every places in Paris?</p>
 
+{{!--
 <div class="input-group" align="center">
   <input class="form-control" placeholder="I can help you to find anything you want!">
   <div class="input-group-addon">
     <i class="fa fa-search"></i>
   </div>
-</div>
+</div> --}}
+<h2>Search for a place</h2>
+
+<form action="/process-add" method="POST">
+  <label>
+    Location:
+    <input type="text" placeholder="Louvre" name="name" class="location-input" />
+  </label>
+  <br />
+
+  <!-- these will be set by out Place Autocomplete -->
+  <input type="hidden" name="name" class="location-input" />
+  <input type="hidden" name="latitude" class="lat-input" />
+  <input type="hidden" name="longitude" class="lng-input" />
+
+  <button>Search</button>
+</form>
+
+
+
 <br>
 
 <section>
@@ -24,7 +44,7 @@
 </section>
 <div id="map"></div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_B3dPHu_nluJPujSi60WDjA2ymELGVNo
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyC_B3dPHu_nluJPujSi60WDjA2ymELGVNo
 ">
 </script>
 <script type="text/javascript" src="main.js"></script>
