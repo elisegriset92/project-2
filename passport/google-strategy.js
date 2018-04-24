@@ -24,7 +24,7 @@ passport.use(
           }
           return User.create({
             googleID: id,
-            fullName: displayName,
+            username: displayName,
             email: emails[0].value,
           });
         })
