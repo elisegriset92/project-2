@@ -51,11 +51,22 @@ axios
     const placeList = response.data;
     placeList.forEach(onePlace => {
       const [lat, lng] = onePlace.location.coordinates;
-      new google.maps.Marker({
+      var marker = new google.maps.Marker({
         position: {lat, lng},
         map: map,
         title: 'onePlace.name',
         animation: google.maps.Animation.DROP,
+      });
+      marker.addListener('click', function() {
+        infowindow.open(map, marker);
+      });
+      var contentString =
+        '<p id="firstHeading" class="firstHeading">{{onePlace.name}}</p>' +
+        '<a href="/views/pin/view-pin.hbs">' +
+        'view pins</a> ';
+
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString,
       });
     });
   })
