@@ -6,6 +6,12 @@ a {
   color: #00b7ff;
 }
 
+h4 {
+  font-size: 90px;
+  text-align: left;
+  font-weight: 900;
+}
+
 .signup {
   text-align: center;
 }
@@ -15,11 +21,10 @@ a {
 }
 
 .description {
-  text-align: center;
-}
-
-.index {
-  text-align: center;
+  text-align: justify;
+  display: flex;
+  float: left;
+  width: 40%;
 }
 
 #form-container > a {
