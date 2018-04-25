@@ -11,6 +11,10 @@ const pinSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Place',
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   {
     timestamps: {

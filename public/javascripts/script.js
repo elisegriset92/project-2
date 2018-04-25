@@ -65,7 +65,7 @@ axios
         `<p> Last comment at ${onePlace.createdAt}` +
         `<br>` +
         `<a href="/view/pin/${onePlace._id}">` +
-        'View Pins</a> ' +
+        '<br>View Pins</a> ' +
         '<br>' +
         `<a href="/pin/${onePlace._id}">` +
         'Add a Pin</a> ' +

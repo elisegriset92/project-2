@@ -66,7 +66,7 @@ router.post(
       place: place,
     })
       .then(() => {
-        res.redirect('/pin/view-pin');
+        res.redirect('/map/home-page');
       })
       .catch(err => {
         next(err);
@@ -83,12 +83,33 @@ router.get('/view/pin/:placeId', (req, res, next) => {
       next(err);
     });
   Pin.find({place: req.params.placeId})
+    .sort({createdAt: -1})
     .populate('place')
     .then(pinsFromDb => {
       res.render('pin/view-pin', {pinList: pinsFromDb});
     })
     .catch(err => {
       next(err);
+    });
+});
+
+router.get('/edit-pin', (req, res, next) => {
+  User.findById(req.params.userId)
+    .then(userDetails => {
+      res.locals.userId = req.params.userId;
+      res.locals.user = userDetails;
+    })
+    .catch(err => {
+      next(err);
+      Pin.find({user: req.params.userId})
+        .sort({createdAt: -1})
+        .populate('user')
+        .then(pinsFromDb => {
+          res.render('pin/edit-pin', {pinList: pinsFromDb});
+        })
+        .catch(err => {
+          next(err);
+        });
     });
 });
 

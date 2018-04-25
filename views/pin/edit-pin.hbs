@@ -1,1 +1,20 @@
-<h4>My Pins</h4>
+<div class="container ">
+  <div class="row">
+    <br>
+    <div class='col'>
+      <h4>MY PINS</h4>
+    </div>
+
+    <div class='col'>
+
+      {{#each pinList}}
+      <ul>
+        <li class="list-group-item">
+          <h2>{{this.comment}}</h2>
+          <p>{{this.username}}</p>
+          <img src="{{this.imageUrl}}" width="200px">
+          <p>{{this.createdAt}}</p>
+
+        </li>
+        <br> {{/each}}
+      </ul>
