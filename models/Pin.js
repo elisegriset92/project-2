@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 const pinSchema = new Schema(
   {
-    username: {type: String, required: true},
+    username: {type: String},
     comment: {type: String},
     imageName: {type: String},
     imageUrl: {type: String},
     place: {
       type: Schema.Types.ObjectId,
-      ref: 'Pin',
+      ref: 'Place',
     },
   },
   {

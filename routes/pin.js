@@ -53,16 +53,17 @@ router.post(
   '/add-pin/:placeId',
   upload.single('blahUpload'),
   (req, res, next) => {
-    const {username, comment} = req.body;
+    const {username, comment, userId} = req.body;
     const {originalname, secure_url} = req.file;
-    const {place} = req.params.placeId;
+    const place = req.params.placeId;
 
     Pin.create({
       username,
+      userId,
       comment,
       imageName: originalname,
       imageUrl: secure_url,
-      place,
+      place: place,
     })
       .then(() => {
         res.redirect('/map/home-page');
@@ -72,9 +73,11 @@ router.post(
       });
   }
 );
-// router.get('/pin/:placeId', (req, res, next)=> {
-// Pin.findById(req.params.)
-// })
+router.get('/view/pin/:placeId', (req, res, next) => {
+  Pin.find({place: 'req.params.placeId'});
+
+  res.render('pin/view-pin');
+});
 
 // DELETE
 

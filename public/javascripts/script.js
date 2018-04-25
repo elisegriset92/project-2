@@ -62,7 +62,7 @@ axios
       });
       var contentString =
         `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +
-        '<a href="/pin/view-pin/${onePlace._id}"">' +
+        `<a href="/view/pin/${onePlace._id}">` +
         'View Pins</a> ' +
         '<br>' +
         `<a href="/pin/${onePlace._id}">` +
