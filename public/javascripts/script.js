@@ -63,10 +63,10 @@ axios
       console.log(onePlace);
       var contentString =
         '<p id="firstHeading" class="firstHeading">{{name}}</p>' +
-        '<a href="/views/pin/view-pin.hbs">' +
+        '<a href="/views/pin/view-pin">' +
         'View Pins</a> ' +
         '<br>' +
-        '<a href="/views/pin/add-pin.hbs">' +
+        '<a href="/views/pin/add-pin">' +
         'Add a Pin</a> ' +
         '</div>' +
         '</div>';
