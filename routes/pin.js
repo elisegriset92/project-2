@@ -52,12 +52,14 @@ router.get('/pin/:placeId', (req, res, next) => {
 router.post('/add-pin', upload.single('blahUpload'), (req, res, next) => {
   const {username, comment} = req.body;
   const {originalname, secure_url} = req.file;
+  // const {place} = ;
 
   Pin.create({
     username,
     comment,
     imageName: originalname,
     imageUrl: secure_url,
+    place,
   })
     .then(() => {
       res.redirect('/map/home-page');

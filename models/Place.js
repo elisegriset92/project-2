@@ -9,10 +9,6 @@ const placeSchema = new Schema(
       type: {type: String},
       coordinates: [{type: Number}],
     },
-    // pin: {
-    //   type: Schema.Types.ObjectId,
-    //   ref: 'Pin',
-    // },
   },
   {
     timestamps: true,
