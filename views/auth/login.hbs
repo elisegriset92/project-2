@@ -6,6 +6,7 @@
       <h4>LOGIN</h4>
       <br>
       <br>
+
       <a href="/auth/google/login" class="btn-lg btn-danger">Login with Google</a>
       <br>
       <br>
@@ -14,27 +15,28 @@
     <div class='col'>
 
       <form action="/auth/login" method="POST" id="form-container">
-        <label>Email</label>
-        <input class="form-control col-8" type="text" name="username" placeholder="Your Email">
+        <div class="" align="center">
 
-        <br>
-        <br>
+          <label>Email</label>
+          <input class="form-control col-8" type="text" name="username" placeholder="Your Email">
 
-        <label for="password">Password</label>
-        <input id="password" class="form-control col-8" type="password" name="password" placeholder="Your Password">
-        <br> {{#if message }}
-        <div class="error-message">{{ message }}</div>
-        {{/if}}
+          <br>
+          <br>
 
-        <br>
+          <label for="password">Password</label>
+          <input id="password" class="form-control col-8" type="password" name="password" placeholder="Your Password">
+          <br> {{#if message }}
+          <div class="error-message">{{ message }}</div>
+          {{/if}}
 
-        <button class=" btn-lg btn-primary">Login</button>
+          <button class=" btn-lg btn-primary">Login</button>
 
-        <p class="account-message">
-          Don't have an account yet?
-          <a href="/auth/signup">Signup</a>
-        </p>
+          <small id="emailHelp" class="form-text text-muted account-message">
+            Don't have an account yet?
+            <a href="/auth/signup">Signup</a>
+          </small>
       </form>
+      </div>
     </div>
   </div>
 </div>

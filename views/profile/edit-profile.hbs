@@ -11,40 +11,43 @@
     <div class='col'>
 
       <form action="/auth/edit-profile" method="POST" id="form-container">
-        <label>First Name</label>
-        <input id="firstName" class="form-control col-8 " type="firstName" name="firstName" value="{{blahUser.firstName}}">
+        <div class="" align="center">
 
-        <br>
+          <label>First Name</label>
+          <input id="firstName" class="form-control col-8 " type="firstName" name="firstName" value="{{blahUser.firstName}}">
 
-        <label>Last Name</label>
-        <input id="lastName" class="form-control col-8" type="lastName" name="lastName" value="{{blahUser.lastName}}">
+          <br>
 
-        <br>
+          <label>Last Name</label>
+          <input id="lastName" class="form-control col-8" type="lastName" name="lastName" value="{{blahUser.lastName}}">
 
-        <label>Username</label>
-        <input id="username" class="form-control col-8 " type="username" name="username" value="{{blahUser.username}}">
+          <br>
 
-        <br>
+          <label>Username</label>
+          <input id="username" class="form-control col-8 " type="username" name="username" value="{{blahUser.username}}">
 
-        <label>Email</label>
-        <input id="email" class="form-control col-8" type="email" name="email" value="{{blahUser.email}}">
+          <br>
 
-        <br>
+          <label>Email</label>
+          <input id="email" class="form-control col-8" type="email" name="email" value="{{blahUser.email}}">
 
-        <label for="password">Password</label>
-        <input id="password" class="form-control col-8" type="password" name="password" value="{{blahUser.password}}">
-        <br> {{#if message }}
-        <div class="error-message">{{ message }}</div>
-        {{/if}}
+          <br>
 
-        <br>
+          <label for="password">Password</label>
+          <input id="password" class="form-control col-8" type="password" name="password" value="{{blahUser.password}}">
+          <br> {{#if message }}
+          <div class="error-message">{{ message }}</div>
+          {{/if}}
 
-        <button class="btn-lg btn-primary">Edit Profile</button>
-        <br>
-        <br>
-        <a href="/map/home-page">Back To The Map</a>
-        </p>
+          <button class="btn-lg btn-primary">Edit Profile</button>
+          <br>
+          <small id="emailHelp" class="form-text text-muted account-message">
+
+            <a href="/map/home-page">Back To The Map</a>
+          </small>
+          </p>
       </form>
+      </div>
     </div>
   </div>
 </div>

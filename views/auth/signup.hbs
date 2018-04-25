@@ -1,54 +1,56 @@
 <!-- views/auth/signup.hbs -->
-<div class="signup">
-  <h2>Signup</h2>
-  <br>
-  <a href="/auth/google/login" class="btn-lg btn-danger">Login with Google</a>
-
-  <br>
-  <hr>
-  <small id="emailHelp" class="form-text text-muted">or</small>
-
-
-  <form action="/auth/signup" class="" method="POST" id="form-container">
-    <br>
+<div class="container ">
+  <div class="row">
     <br>
 
-    <div class="" align="center">
-      <label>First Name</label>
-      <input id="firstName" class="form-control signup col-4" type="firstName" name="firstName" placeholder="Your first name">
+    <div class='col'>
+      <h4>SIGNUP</h4>
       <br>
       <br>
-
-      <label>Last Name</label>
-      <input id="lastName" class="form-control signup col-4" type="lastName" name="lastName" placeholder="Your last name">
-      <br>
+      <a href="/auth/google/login" class="btn-lg btn-danger">Login with Google</a>
       <br>
 
-      <label for="username">Username</label>
-      <input id="username" class="form-control signup col-4" type="text" name="username" placeholder="JonSnow">
-      <br>
-      <br>
-
-      <label>Email</label>
-      <input id="email" class="form-control signup col-4" type="email" name="email" placeholder="Your email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      <br>
-      <br>
-
-      <label for="password">Password</label>
-      <input id="password" class="form-control signup col-4" type="password" name="password" placeholder="Your password">
-      <br> {{#if message }}
-      <div class="error-message">{{ message }}</div>
-      {{/if}}
-
-      <br>
-      <button class="btn-lg btn-primary ">Create account</button>
-
-      <p class="account-message">
-        Do you already have an account?
-        <a href="/auth/login">Login</a>
-      </p>
     </div>
-  </form>
 
+    <div class='col'>
+      <form action="/auth/signup" class="" method="POST" id="form-container">
+        <br>
+
+        <div class="" align="center">
+          <label>First Name</label>
+          <input id="firstName" class="form-control col-8" type="firstName" name="firstName" placeholder="Your first name">
+
+          <br>
+
+          <label>Last Name</label>
+          <input id="lastName" class="form-control col-8" type="lastName" name="lastName" placeholder="Your last name">
+          <br>
+
+          <label for="username">Username</label>
+          <input id="username" class="form-control col-8" type="text" name="username" placeholder="JonSnow">
+
+          <br>
+
+          <label>Email</label>
+          <input id="email" class="form-control col-8" type="email" name="email" placeholder="Your email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+          <br>
+
+          <label for="password">Password</label>
+          <input id="password" class="form-control col-8" type="password" name="password" placeholder="Your password">
+          <br> {{#if message }}
+          <div class="error-message">{{ message }}</div>
+          {{/if}}
+          <button class="btn-lg btn-primary ">Create account</button>
+
+          <br>
+          <small id="emailHelp" class="form-text text-muted account-message">
+            Do you already have an account?
+            <a href="/auth/login">Login</a>
+          </small>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
