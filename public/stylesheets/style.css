@@ -6,7 +6,7 @@ a {
   color: #00b7ff; }
 
 .vertical {
-  margin-top: 10vh;
+  margin-top: 8vh;
   text-align: justify; }
 
 h4 {
@@ -34,10 +34,10 @@ nav button {
   float: right; }
 
 .btn-warning {
-  float: right; }
+  text-align: right; }
 
 nav {
-  background-color: gray; }
+  background-color: grey; }
 
 .sk-folding-cube {
   margin: 30px auto;

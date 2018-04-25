@@ -12,10 +12,10 @@
 <body>
 
   {{#if blahUser}}
-  <header>
-    <nav>
+  <nav>
+      <a href="/map/home-page"><button class="btn btn-secondary" align="right" type="button"</button>HOME</a>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+        <button class="btn btn-secondary dropdown-toggle" align="right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
 
           {{blahUser.username}}
@@ -27,8 +27,7 @@
           <a class="dropdown-item" href="/auth/logout">Log Out</a>
         </div>
       </div>
-    </nav>
-  </header>
+  </nav>
   {{/if}}
 
   <br>
