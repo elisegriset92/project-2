@@ -33,13 +33,16 @@ router.get('/edit-pin', (req, res, next) => {
 //  GET add pin page for a specific place
 
 router.get('/pin/:placeId', (req, res, next) => {
-  // if (!req.user) {
-  //   res.redirect('/auth/login');
-  // }
-  Place.findbyId(req.params.placeId)
-    .populate('place')
+  if (!req.user) {
+    res.redirect('/auth/login');
+  }
+
+  Place.findByIdAndUpdate(req.params.placeId)
     .then(placeDetails => {
-      res.render('pin/add-pin', {place: placeDetails});
+      res.locals.placeId = req.params.placeId;
+      res.locals.place = placeDetails;
+      // res.send(req.params.placeId);
+      res.render('pin/add-pin');
     })
     .catch(err => {
       next(err);

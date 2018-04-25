@@ -12,7 +12,6 @@ const placeSchema = new Schema(
     // pin: {
     //   type: Schema.Types.ObjectId,
     //   ref: 'Pin',
-    //   required: true,
     // },
   },
   {
