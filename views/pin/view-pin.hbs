@@ -18,5 +18,10 @@
           <p>{{this.createdAt}}</p>
 
         </li>
+        {{else}}
+        <h2>No Pins yet,
+          <a href="/pin/{{place._id}}">create one ! </a>
+        </h2>
+
         <br> {{/each}}
       </ul>

@@ -50,16 +50,18 @@ router.get('/pin/:placeId', (req, res, next) => {
 });
 
 router.post(
-  '/add-pin/:placeId',
+  '/:userId/add-pin/:placeId',
   upload.single('blahUpload'),
   (req, res, next) => {
-    const {username, comment, userId} = req.body;
+    const {username, comment} = req.body;
     const {originalname, secure_url} = req.file;
     const place = req.params.placeId;
+    const userId = req.params.userId;
+    console.log(userId);
 
     Pin.create({
       username,
-      userId,
+      userId: userId,
       comment,
       imageName: originalname,
       imageUrl: secure_url,
@@ -93,7 +95,7 @@ router.get('/view/pin/:placeId', (req, res, next) => {
     });
 });
 
-router.get('/edit-pin', (req, res, next) => {
+router.get('/edit-pin/:userId', (req, res, next) => {
   User.findById(req.params.userId)
     .then(userDetails => {
       res.locals.userId = req.params.userId;
@@ -105,7 +107,7 @@ router.get('/edit-pin', (req, res, next) => {
         .sort({createdAt: -1})
         .populate('user')
         .then(pinsFromDb => {
-          res.render('pin/edit-pin', {pinList: pinsFromDb});
+          res.render('map/home-page', {pinList: pinsFromDb});
         })
         .catch(err => {
           next(err);
@@ -114,5 +116,16 @@ router.get('/edit-pin', (req, res, next) => {
 });
 
 // DELETE
+
+router.get('/pin/:pinId/delete', (req, res, next) => {
+  Pin.findByIdAndRemove(req.params.pinId)
+    .then(() => {
+      res.render('map/home-page');
+      // res.render(`pin/${req.params.pinId}`);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 module.exports = router;
