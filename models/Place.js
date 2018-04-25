@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const placeSchema = new Schema(
@@ -10,6 +9,11 @@ const placeSchema = new Schema(
       type: {type: String},
       coordinates: [{type: Number}],
     },
+    // pin: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Pin',
+    //   required: true,
+    // },
   },
   {
     timestamps: true,

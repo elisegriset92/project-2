@@ -3,9 +3,15 @@ const Schema = mongoose.Schema;
 
 const pinSchema = new Schema(
   {
-    place: {type: String, required: true},
-    author: {type: String, required: true},
-    picture: {type: String, required: true},
+    username: {type: String, required: true},
+    comment: {type: String},
+    imageName: {type: String},
+    imageUrl: {type: String},
+    // place: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: 'Place',
+    //   required: true,
+    // },
   },
   {
     timestamps: {
@@ -15,6 +21,5 @@ const pinSchema = new Schema(
   }
 );
 
-const Pin = mongoose.model('Pin', userSchema);
+const Pin = mongoose.model('Pin', pinSchema);
 module.exports = Pin;
- 

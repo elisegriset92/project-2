@@ -18,30 +18,30 @@ const map = new google.maps.Map(document.getElementById('map'), {
 
 // markers
 
-new google.maps.Marker({
-  position: {
-    lat: 48.855076,
-    lng: 2.356184,
-  },
-  map: map,
-  title: 'Paris',
-  animation: google.maps.Animation.DROP,
-});
+// new google.maps.Marker({
+//   position: {
+//     lat: 48.855076,
+//     lng: 2.356184,
+//   },
+//   map: map,
+//   title: 'Paris',
+//   animation: google.maps.Animation.DROP,
+// });
 
 // geolocalisation
 
 navigator.geolocation.getCurrentPosition(result => {
   const {latitude, longitude} = result.coords;
   map.setCenter({lat: latitude, lng: longitude});
-  new google.maps.Marker({
-    position: {
-      lat: latitude,
-      lng: longitude,
-    },
-    map: map,
-    title: 'You are Here',
-    animation: google.maps.Animation.DROP,
-  });
+  // new google.maps.Marker({
+  //   position: {
+  //     lat: latitude,
+  //     lng: longitude,
+  //   },
+  //   map: map,
+  //   title: 'You are Here',
+  //   animation: google.maps.Animation.DROP,
+  // });
 });
 
 // retrieve places data from our backend
@@ -60,13 +60,12 @@ axios
       marker.addListener('click', function() {
         infowindow.open(map, marker);
       });
-      console.log(onePlace);
       var contentString =
         '<p id="firstHeading" class="firstHeading">{{name}}</p>' +
         '<a href="/views/pin/view-pin">' +
         'View Pins</a> ' +
         '<br>' +
-        '<a href="/views/pin/add-pin">' +
+        '<a href="/pin/:placeId">' +
         'Add a Pin</a> ' +
         '</div>' +
         '</div>';
