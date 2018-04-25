@@ -1,8 +1,5 @@
-<br>
-<br>
-<br>
-<h1 class="text-center">Welcome {{blahUser.firstName}}</h1>
-<br>
+<h4 class="text-center">
+  Welcome {{blahUser.firstName}}</h4>
 <br>
 <p class="text-center">Do you want to know what the Q looks like in every places in Paris?</p>
 
@@ -16,10 +13,7 @@
 <h2>Search for a place</h2>
 
 <form action="/process-add" method="POST">
-  <label>
-    Location:
-    <input type="text" placeholder="Louvre" name="name" class="form-control  location-input " />
-  </label>
+  <input type="text" placeholder="Louvre" name="name" class="form-control  location-input " />
   <br />
 
   <!-- these will be set by out Place Autocomplete -->
@@ -27,7 +21,7 @@
   <input type="hidden" name="latitude" class="lat-input" />
   <input type="hidden" name="longitude" class="lng-input" />
 
-  <button>Search</button>
+  <button class="btn btn-primary">Search</button>
 </form>
 
 

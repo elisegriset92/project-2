@@ -1,32 +1,40 @@
-<div align="center">
-<h2>Login</h2>
-<br><br>
-<a href="/auth/google/login" class="btn-lg btn-danger">Login with Google</a>
-<br><br>
-<br>
-  <hr>
-    <small id="emailHelp" class="form-text text-muted">or</small>
-<br><br>
-<form action="/auth/login" method="POST" id="form-container">
-  <label>Email</label>
-  <input class="form-control col-4 signup" type="text" name="username" placeholder="Your Email">
+<div class="container ">
+  <div class="row">
+    <br>
 
-  <br>
-  <br>
+    <div class='col'>
+      <h4>LOGIN</h4>
+      <br>
+      <br>
+      <a href="/auth/google/login" class="btn-lg btn-danger">Login with Google</a>
+      <br>
+      <br>
+    </div>
 
-  <label for="password">Password</label>
-  <input id="password" class="form-control col-4 signup" type="password" name="password" placeholder="Your Password">
-  <br> {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+    <div class='col'>
 
-  <br>
+      <form action="/auth/login" method="POST" id="form-container">
+        <label>Email</label>
+        <input class="form-control col-8" type="text" name="username" placeholder="Your Email">
 
-  <button class=" btn-lg btn-primary">Login</button>
+        <br>
+        <br>
 
-  <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/signup">Signup</a>
-  </p>
-</form>
+        <label for="password">Password</label>
+        <input id="password" class="form-control col-8" type="password" name="password" placeholder="Your Password">
+        <br> {{#if message }}
+        <div class="error-message">{{ message }}</div>
+        {{/if}}
+
+        <br>
+
+        <button class=" btn-lg btn-primary">Login</button>
+
+        <p class="account-message">
+          Don't have an account yet?
+          <a href="/auth/signup">Signup</a>
+        </p>
+      </form>
+    </div>
+  </div>
 </div>

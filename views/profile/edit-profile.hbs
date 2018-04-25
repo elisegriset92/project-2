@@ -1,43 +1,50 @@
-<div align="center">
-<h2> Edit my profile</h2>
-<br><br>
-<form action="/auth/edit-profile" method="POST" id="form-container">
-  <label>First Name</label>
-  <input id="firstName" class="form-control col-4 signup" type="firstName" name="firstName" value="{{blahUser.firstName}}">
+<div class="container ">
+  <div class="row">
+    <br>
 
-  <br>
-  <br>
+    <div class='col'>
+      <h4>EDIT</h4>
+      <h4>MY </h4>
+      <h4>PROFILE</h4>
+    </div>
 
-  <label>Last Name</label>
-  <input id="lastName" class="form-control col-4 signup" type="lastName" name="lastName" value="{{blahUser.lastName}}">
+    <div class='col'>
 
-  <br>
-  <br>
+      <form action="/auth/edit-profile" method="POST" id="form-container">
+        <label>First Name</label>
+        <input id="firstName" class="form-control col-8 " type="firstName" name="firstName" value="{{blahUser.firstName}}">
 
-  <label>Username</label>
-  <input id="username" class="form-control col-4 signup" type="username" name="username" value="{{blahUser.username}}">
+        <br>
 
-  <br>
-  <br>
+        <label>Last Name</label>
+        <input id="lastName" class="form-control col-8" type="lastName" name="lastName" value="{{blahUser.lastName}}">
 
-  <label>Email</label>
-  <input id="email" class="form-control col-4 signup" type="email" name="email" value="{{blahUser.email}}">
+        <br>
 
-  <br>
-  <br>
+        <label>Username</label>
+        <input id="username" class="form-control col-8 " type="username" name="username" value="{{blahUser.username}}">
 
-  <label for="password">Password</label>
-  <input id="password" class="form-control col-4 signup" type="password" name="password" value="{{blahUser.password}}">
-  <br> {{#if message }}
-  <div class="error-message">{{ message }}</div>
-  {{/if}}
+        <br>
 
-  <br>
-  <br>
+        <label>Email</label>
+        <input id="email" class="form-control col-8" type="email" name="email" value="{{blahUser.email}}">
 
-  <button class="btn-lg btn-primary">Edit Profile</button>
-<br><br>
-  <a href="/map/home-page">Back To The Map</a>
-  </p>
-</form>
+        <br>
+
+        <label for="password">Password</label>
+        <input id="password" class="form-control col-8" type="password" name="password" value="{{blahUser.password}}">
+        <br> {{#if message }}
+        <div class="error-message">{{ message }}</div>
+        {{/if}}
+
+        <br>
+
+        <button class="btn-lg btn-primary">Edit Profile</button>
+        <br>
+        <br>
+        <a href="/map/home-page">Back To The Map</a>
+        </p>
+      </form>
+    </div>
+  </div>
 </div>
