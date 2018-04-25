@@ -66,7 +66,7 @@ router.post(
       place: place,
     })
       .then(() => {
-        res.redirect('/map/home-page');
+        res.redirect('/pin/view-pin');
       })
       .catch(err => {
         next(err);
@@ -74,9 +74,22 @@ router.post(
   }
 );
 router.get('/view/pin/:placeId', (req, res, next) => {
-  Pin.find({place: 'req.params.placeId'});
-
-  res.render('pin/view-pin');
+  Place.findById(req.params.placeId)
+    .then(placeDetails => {
+      res.locals.placeId = req.params.placeId;
+      res.locals.place = placeDetails;
+    })
+    .catch(err => {
+      next(err);
+    });
+  Pin.find({place: req.params.placeId})
+    .populate('place')
+    .then(pinsFromDb => {
+      res.render('pin/view-pin', {pinList: pinsFromDb});
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 // DELETE

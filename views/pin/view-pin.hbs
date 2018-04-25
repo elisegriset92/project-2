@@ -1,3 +1,22 @@
-<h4>Attendance</h4>
-<h4>at the </h4>
-<h2>{{placeId.name}}</h2>
+<div class="container ">
+  <div class="row">
+    <br>
+    <div class='col'>
+      <h4>Attendance</h4>
+      <h4>at the </h4>
+      <h2>{{place.name}}</h2>
+    </div>
+
+    <div class='col'>
+
+      {{#each pinList}}
+      <ul>
+        <li class="list-group-item">
+          <h2>{{this.comment}}</h2>
+          <p>{{this.username}}</p>
+          <img src="{{this.imageUrl}}">
+          <p>{{this.createdAt}}</p>
+
+        </li>
+        {{/each}}
+      </ul>
