@@ -37,7 +37,7 @@ router.get('/pin/:placeId', (req, res, next) => {
     res.redirect('/auth/login');
   }
 
-  Place.findByIdAndUpdate(req.params.placeId)
+  Place.findById(req.params.placeId)
     .then(placeDetails => {
       res.locals.placeId = req.params.placeId;
       res.locals.place = placeDetails;
@@ -49,25 +49,32 @@ router.get('/pin/:placeId', (req, res, next) => {
     });
 });
 
-router.post('/add-pin', upload.single('blahUpload'), (req, res, next) => {
-  const {username, comment} = req.body;
-  const {originalname, secure_url} = req.file;
-  // const {place} = ;
+router.post(
+  '/add-pin/:placeId',
+  upload.single('blahUpload'),
+  (req, res, next) => {
+    const {username, comment} = req.body;
+    const {originalname, secure_url} = req.file;
+    const {place} = req.params.placeId;
 
-  Pin.create({
-    username,
-    comment,
-    imageName: originalname,
-    imageUrl: secure_url,
-    place,
-  })
-    .then(() => {
-      res.redirect('/map/home-page');
+    Pin.create({
+      username,
+      comment,
+      imageName: originalname,
+      imageUrl: secure_url,
+      place,
     })
-    .catch(err => {
-      next(err);
-    });
-});
+      .then(() => {
+        res.redirect('/map/home-page');
+      })
+      .catch(err => {
+        next(err);
+      });
+  }
+);
+// router.get('/pin/:placeId', (req, res, next)=> {
+// Pin.findById(req.params.)
+// })
 
 // DELETE
 

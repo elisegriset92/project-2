@@ -7,15 +7,15 @@ const pinSchema = new Schema(
     comment: {type: String},
     imageName: {type: String},
     imageUrl: {type: String},
+    place: {
+      type: Schema.Types.ObjectId,
+      ref: 'Pin',
+    },
   },
   {
     timestamps: {
       createdAt: 'created_at',
       updatedAt: 'updated_at',
-    },
-    place: {
-      type: Schema.Types.ObjectId,
-      ref: 'Pin',
     },
   }
 );
