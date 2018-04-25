@@ -62,7 +62,7 @@ axios
       });
       var contentString =
         `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +
-        `<p> Last comment at ${onePlace._id.timestamps}` +
+        `<p> Last comment at ${onePlace.createdAt}` +
         `<br>` +
         `<a href="/view/pin/${onePlace._id}">` +
         'View Pins</a> ' +
