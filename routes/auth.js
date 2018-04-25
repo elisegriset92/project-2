@@ -27,7 +27,7 @@ authRoutes.get(
 authRoutes.get(
   '/google/success',
   passport.authenticate('google', {
-    successRedirect: '/map/home-page',
+    successRedirect: '/auth/loading',
     successFlash: 'Google log in Success!!!',
     failureRedirect: '/auth/signup',
     failureFlash: 'Google log in Failure...',
