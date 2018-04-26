@@ -58,13 +58,14 @@ router.post(
     const {username, comment} = req.body;
     const {originalname, secure_url} = req.file;
     const place = req.params.placeId;
-
+    console.log(req.user._id);
     Pin.create({
       username,
       comment,
       imageName: originalname,
       imageUrl: secure_url,
       place: place,
+      user: req.user._id,
     })
       .then(() => {
         res.redirect('/map/home-page');
