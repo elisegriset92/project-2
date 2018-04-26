@@ -96,6 +96,7 @@ router.get('/view/pin/:placeId', (req, res, next) => {
 });
 
 router.get('/edit-pin/:userId', (req, res, next) => {
+  // res.render('pin/edit-pin');
   User.findById(req.params.userId)
     .then(userDetails => {
       res.locals.userId = req.params.userId;
@@ -107,7 +108,7 @@ router.get('/edit-pin/:userId', (req, res, next) => {
         .sort({createdAt: -1})
         .populate('user')
         .then(pinsFromDb => {
-          res.render('map/home-page', {pinList: pinsFromDb});
+          res.render('pin/edit-pin', {pinList: pinsFromDb});
         })
         .catch(err => {
           next(err);

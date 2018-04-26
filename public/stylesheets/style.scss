@@ -8,7 +8,7 @@ body {
 a {
   color: #00b7ff;
 }
-.li{
+.li {
   list-style: none;
 }
 
@@ -28,22 +28,26 @@ h4 {
 
 .header-index {
   float: right;
-
 }
 
-footer{
+.btn-secondary {
+  background-color: #ff5a60;
+  border-color: #ff5a60;
+}
+
+footer {
   background-color: #424558;
-   position: fixed;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   height: 30px;
-   text-align: center;
-   color: #CCC;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  text-align: center;
+  color: #ccc;
 }
 
 footer p {
-    line-height: 100%;
+  line-height: 100%;
 }
 
 .description {
@@ -66,11 +70,9 @@ nav button {
   text-align: right;
 }
 
-
 nav {
   background-color: grey;
 }
-
 
 //  Nav bar page animation
 
