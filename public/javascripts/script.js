@@ -9,7 +9,7 @@ document.addEventListener(
 // map
 
 const map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 15,
+  zoom: 12,
   center: {
     lat: 48.855076,
     lng: 2.356184,
@@ -61,8 +61,7 @@ axios
         infowindow.open(map, marker);
       });
 
-      db.heroku_whlr556h.pins("")
-
+      db.heroku_whlr556h.pins('');
 
       var contentString =
         `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +

@@ -25,10 +25,9 @@ passport.use(
             googleID: id,
             username: displayName,
             email: emails[0].value,
+          }).then(newUser => {
+            done(null, newUser);
           });
-        })
-        .then(newUser => {
-          done(null, newUser);
         })
         .catch(err => {
           done(err);
