@@ -12,40 +12,57 @@
 <body>
 
   {{#if blahUser}}
-      <a href="/map/home-page"><button class="btn btn-secondary" type="button">HOME</button></a>
+  <a href="/map/home-page">
+    <button class="btn btn-secondary" type="button">HOME</button>
+  </a>
   <nav>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" align="right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" align="right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
 
-          {{blahUser.username}}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/edit">Edit Profile</a>
-          <a class="dropdown-item" href="/edit-pin/{{blahUser._id}}">View my Pins</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/auth/logout">Log Out</a>
-        </div>
+        {{blahUser.username}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="/edit">Edit Profile</a>
+        <a class="dropdown-item" href="/edit-pin/{{blahUser._id}}">View my Pins</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="/auth/logout">Log Out</a>
       </div>
+    </div>
   </nav>
   {{/if}}
 
-  <br> {{{body}}} <br>
+  <br> {{{body}}}
+  <br> {{!--
+  <footer class="footer">
+    <div class="row">
+      <div class="col-md-4 signup">
+        <ul class="list-group">
+          <li>
+            <li>
+              <li>
+                <a href="/about-us">About The Creators</a>
+                <li>
+        </ul>
+      </div>
+      <div class="col-md-4 signup us">🍟 Website powered by #TeamBillise 🍟</div>
+      <div class="col-md-4 signup">
+        <img src="https://media.giphy.com/media/XpTyRxAlNUd2w/giphy.gif" width="40%"> </div>
+    </div>
+  </footer> --}}
 
-<footer class="footer">
-  <div class="row">
-  <div class="col-md-4 signup">
-    <ul class="list-group">
-      <li>
-      <li>
-      <li><a href="/about-us">About The Creators</a><li>
-    </ul>
-  </div>
-  <div class="col-md-4 signup us">🍟 Website powered by #TeamBillise 🍟</div>
-  <div class="col-md-4 signup"><img src="https://media.giphy.com/media/XpTyRxAlNUd2w/giphy.gif" width="40%"> </div>
-</div>
-</footer>
-  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <p>
+          <div class="col-sm"><a href="/about-us">About The Creators</a></div>
+          <div class="col-sm">🍟 Website powered by #TeamBillise 🍟</div>
+          <div class="col-sm">All rights reserved 2018-2019</div>          
+        </p>
+      </div>
+    </div>
+  </footer>
+
 
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

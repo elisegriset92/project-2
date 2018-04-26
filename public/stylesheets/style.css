@@ -23,16 +23,18 @@ h4 {
 .header-index {
   float: right; }
 
-.footer {
-  position: absolute;
+footer {
+  background-color: #424558;
+  position: fixed;
   bottom: 0;
-  width: 100%;
-  height: 100px;
-  background-color: grey;
-  color: white; }
+  left: 0;
+  right: 0;
+  height: 30px;
+  text-align: center;
+  color: #CCC; }
 
-.us {
-  margin-top: 70px; }
+footer p {
+  line-height: 100%; }
 
 .description {
   text-align: justify;
