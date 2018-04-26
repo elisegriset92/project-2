@@ -1,10 +1,12 @@
 <div class="container ">
   <div class="row">
     <br>
-    <div class='col'>
-      <h4>Attendance</h4>
-      <h4>at the </h4>
-      <h2>{{place.name}}</h2>
+    <div class='col' align="center">
+      <h1>Attendance</h1>
+      <h1>at the </h1>
+      <br><br><br>
+      <h3>{{place.name}}</h3>
+      <br>
       <a href="/pin/{{place._id}}">
         <button class="btn-lg btn-primary">Add a Pin</button>
       </a>
@@ -15,17 +17,16 @@
 
       {{#each pinList}}
       <ul>
-        <li class="list-group-item">
+        <li class="list-group-item" align="center">
           <h2>{{this.comment}}</h2>
           <p>{{this.username}}</p>
           <img src="{{this.imageUrl}}" width="200px">
           <p>{{this.createdAt}}</p>
-
         </li>
+        <br>
+      </ul>
         {{else}}
         <h2>No Pins yet,
           <a href="/pin/{{place._id}}">create one ! </a>
         </h2>
-
-        <br> {{/each}}
-      </ul>
+        {{/each}}
