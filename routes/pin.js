@@ -118,7 +118,6 @@ router.get('/edit-pin/:userId', (req, res, next) => {
     .populate('user')
     .then(pinsFromDb => {
       res.render('pin/edit-pin', {pinList: pinsFromDb});
-      console.log(pinList);
     })
     .catch(err => {
       next(err);
