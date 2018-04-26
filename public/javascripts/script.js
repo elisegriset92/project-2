@@ -57,13 +57,19 @@ axios
         title: onePlace.name,
         animation: google.maps.Animation.DROP,
       });
+
       marker.addListener('click', function() {
         infowindow.open(map, marker);
+        setTimeout(function() {
+          infowindow.close();
+        }, 3000);
       });
+
+      var crea = new Date(onePlace.createdAt).toGMTString();
 
       var contentString =
         `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +
-        `<p> Last comment at ${onePlace.createdAt}` +
+        `<p> Last comment on <b>${crea}</b>` +
         `<br>` +
         `<a href="/view/pin/${onePlace._id}">` +
         '<br>View Pins</a> ' +

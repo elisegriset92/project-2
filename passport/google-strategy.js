@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: process.env.google_id,
       clientSecret: process.env.google_secret,
-      callbackURL: 'auth/google/success',
+      callbackURL: '/auth/google/success',
       proxy: true,
     },
     (accessToken, refreshToken, profile, done) => {
