@@ -1,9 +1,13 @@
+<br>
+<br>
+<br>
+<br>
 <div class="container ">
   <div class="row">
     <br>
 
-    <div class='col'>
-      <h4>LOGIN</h4>
+    <div class='col' align="center">
+      <h1>LOGIN</h1>
       <br>
       <br>
 
@@ -14,16 +18,16 @@
 
     <div class='col'>
 
-      <form action="/auth/login" method="POST" id="form-container">
+      <form action="/auth/login" method="POST" id="form-container" class="login">
         <div class="" align="center">
-
-          <label>Email</label>
+          
+          <label><b>Email</b></label>
           <input class="form-control col-8" type="text" name="username" placeholder="Your Email">
 
           <br>
           <br>
 
-          <label for="password">Password</label>
+          <label for="password"><b>Password</b></label>
           <input id="password" class="form-control col-8" type="password" name="password" placeholder="Your Password">
           <br> {{#if message }}
           <div class="error-message">{{ message }}</div>
@@ -32,6 +36,7 @@
           <button class=" btn-lg btn-primary">Login</button>
 
           <small id="emailHelp" class="form-text text-muted account-message">
+            <br>
             Don't have an account yet?
             <a href="/auth/signup">Signup</a>
           </small>

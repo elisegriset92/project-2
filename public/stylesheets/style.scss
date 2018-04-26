@@ -1,8 +1,9 @@
 body {
   padding: 20px;
   font-family: 'Overpass', sans-serif;
-  // margin-top: 20px;
-  // margin-right: 20px;
+  background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -17,9 +18,9 @@ a {
   text-align: justify;
 }
 h4 {
-  font-size: 60px;
+  font-size: 50px;
   text-align: left;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .signup {
@@ -67,7 +68,7 @@ footer p {
 }
 
 nav h4 {
-  margin: 0px 24.5vw;
+  margin: 0px 28vw;
 }
 
 h1 {
@@ -76,11 +77,21 @@ h1 {
   padding-top: 7vh;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 50px;
+}
+
 .border-perso {
   border: 2px solid grey;
 }
 
-//  Nav bar page animation
+.login {
+  margin-top: 8vh;
+}
+
+
+//  Loading page animation
 
 .sk-folding-cube {
   margin: 30px auto;

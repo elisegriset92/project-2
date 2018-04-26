@@ -1,6 +1,9 @@
 body {
   padding: 20px;
-  font-family: 'Overpass', sans-serif; }
+  font-family: 'Overpass', sans-serif;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 a {
   color: #00b7ff; }
@@ -13,9 +16,9 @@ a {
   text-align: justify; }
 
 h4 {
-  font-size: 60px;
+  font-size: 50px;
   text-align: left;
-  font-weight: 900; }
+  font-weight: 700; }
 
 .signup {
   text-align: center; }
@@ -54,15 +57,22 @@ footer p {
   color: white; }
 
 nav h4 {
-  margin: 0px 24.5vw; }
+  margin: 0px 28vw; }
 
 h1 {
   font-weight: 900;
   font-size: 90px;
   padding-top: 7vh; }
 
+h2 {
+  font-weight: 700;
+  font-size: 50px; }
+
 .border-perso {
   border: 2px solid grey; }
+
+.login {
+  margin-top: 8vh; }
 
 .sk-folding-cube {
   margin: 30px auto;
