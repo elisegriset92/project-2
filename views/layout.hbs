@@ -12,15 +12,16 @@
 <body>
 
   {{#if blahUser}}
-  <a href="/map/home-page">
-    <img src="/images/logo.png">
-  </a>
-  <nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a href="/map/home-page">
+      <img src="/images/logo.png">
+      </a>
+      <h4 class="text-center">
+  Welcome {{blahUser.username}}</h4>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" align="right" type="button" id="dropdownMenuButton" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-
-        {{blahUser.username}}
+      {{blahUser.username}}
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="/edit">Edit Profile</a>
@@ -33,23 +34,7 @@
   {{/if}}
 
   <br> {{{body}}}
-  <br> {{!--
-  <footer class="footer">
-    <div class="row">
-      <div class="col-md-4 signup">
-        <ul class="list-group">
-          <li>
-            <li>
-              <li>
-                <a href="/about-us">About The Creators</a>
-                <li>
-        </ul>
-      </div>
-      <div class="col-md-4 signup us">🍟 Website powered by #TeamBillise 🍟</div>
-      <div class="col-md-4 signup">
-        <img src="https://media.giphy.com/media/XpTyRxAlNUd2w/giphy.gif" width="40%"> </div>
-    </div>
-  </footer> --}}
+  <br>
 
   <footer>
     <div class="container">

@@ -17,7 +17,7 @@ a {
   text-align: justify;
 }
 h4 {
-  font-size: 90px;
+  font-size: 60px;
   text-align: left;
   font-weight: 900;
 }
@@ -61,17 +61,23 @@ footer p {
   text-align: center;
 }
 
-nav button {
-  padding: 15px;
-  float: right;
-}
-
 .btn-warning {
   text-align: right;
+  color: white;
 }
 
-nav {
-  background-color: grey;
+nav h4 {
+  margin: 0px 24.5vw;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 90px;
+  padding-top: 7vh;
+}
+
+.border-perso {
+  border: 2px solid grey;
 }
 
 //  Nav bar page animation
