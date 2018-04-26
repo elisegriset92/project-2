@@ -35,4 +35,6 @@ router.get('/place/data', (req, res, next) => {
     });
 });
 
+router.get('');
+
 module.exports = router;

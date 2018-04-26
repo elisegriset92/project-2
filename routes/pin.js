@@ -52,18 +52,15 @@ router.get('/pin/:placeId', (req, res, next) => {
 // add a pin about a specific place
 
 router.post(
-  '/:userId/add-pin/:placeId',
+  '/add-pin/:placeId',
   upload.single('blahUpload'),
   (req, res, next) => {
     const {username, comment} = req.body;
     const {originalname, secure_url} = req.file;
     const place = req.params.placeId;
-    const userId = req.params.userId;
-    console.log(userId);
 
     Pin.create({
       username,
-      userId: userId,
       comment,
       imageName: originalname,
       imageUrl: secure_url,

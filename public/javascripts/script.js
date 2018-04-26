@@ -65,7 +65,7 @@ axios
         }, 3000);
       });
 
-      var crea = new Date(onePlace.createdAt).toGMTString();
+      var crea = new Date(onePlace.updatedAt).toString();
 
       var contentString =
         `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +
