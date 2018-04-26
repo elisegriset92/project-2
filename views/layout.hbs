@@ -12,8 +12,8 @@
 <body>
 
   {{#if blahUser}}
+      <a href="/map/home-page"><button class="btn btn-secondary" type="button">HOME</button></a>
   <nav>
-      <a href="/map/home-page"><button class="btn btn-secondary" align="right" type="button"</button>HOME</a>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" align="right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
@@ -30,9 +30,24 @@
   </nav>
   {{/if}}
 
-  <br>
-  <br>
-  <br> {{{body}}}
+  <br> {{{body}}} <br>
+
+<footer class="footer">
+  <div class="row">
+  <div class="col-md-4 signup">
+    <ul class="list-group">
+      <li>
+      <li>
+      <li><a href="/about-us">About The Creators</a><li>
+    </ul>
+  </div>
+  <div class="col-md-4 signup us">🍟 Website powered by #TeamBillise 🍟</div>
+  <div class="col-md-4 signup"><img src="https://media.giphy.com/media/XpTyRxAlNUd2w/giphy.gif" width="40%"> </div>
+</div>
+</footer>
+  
+
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>

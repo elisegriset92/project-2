@@ -33,4 +33,9 @@ router.post('/auth/edit-profile', (req, res, next) => {
       next(err);
     });
 });
+
+
+router.get('/about-us', (req, res, next) => {
+  res.render('us/about-us')
+})
 module.exports = router;

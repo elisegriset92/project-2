@@ -8,6 +8,9 @@ body {
 a {
   color: #00b7ff;
 }
+.li{
+  list-style: none;
+}
 
 .vertical {
   margin-top: 8vh;
@@ -25,6 +28,18 @@ h4 {
 
 .header-index {
   float: right;
+
+}
+
+.footer{
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+  color: white;
+}
+
+.us {
+  margin-top: 70px;
 }
 
 .description {
