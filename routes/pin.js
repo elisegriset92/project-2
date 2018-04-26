@@ -49,6 +49,8 @@ router.get('/pin/:placeId', (req, res, next) => {
     });
 });
 
+// add a pin about a specific place
+
 router.post(
   '/:userId/add-pin/:placeId',
   upload.single('blahUpload'),
@@ -75,7 +77,13 @@ router.post(
       });
   }
 );
+
+//  view pins about a specific place
+
 router.get('/view/pin/:placeId', (req, res, next) => {
+  if (!req.user) {
+    res.redirect('/auth/login');
+  }
   Place.findById(req.params.placeId)
     .then(placeDetails => {
       res.locals.placeId = req.params.placeId;
@@ -95,6 +103,8 @@ router.get('/view/pin/:placeId', (req, res, next) => {
     });
 });
 
+// view my pins about all the places
+
 router.get('/edit-pin/:userId', (req, res, next) => {
   // res.render('pin/edit-pin');
   User.findById(req.params.userId)
@@ -104,15 +114,16 @@ router.get('/edit-pin/:userId', (req, res, next) => {
     })
     .catch(err => {
       next(err);
-      Pin.find({user: req.params.userId})
-        .sort({createdAt: -1})
-        .populate('user')
-        .then(pinsFromDb => {
-          res.render('pin/edit-pin', {pinList: pinsFromDb});
-        })
-        .catch(err => {
-          next(err);
-        });
+    });
+  Pin.find({user: req.params.userId})
+    .sort({createdAt: -1})
+    .populate('user')
+    .then(pinsFromDb => {
+      res.render('pin/edit-pin', {pinList: pinsFromDb});
+      console.log(pinList);
+    })
+    .catch(err => {
+      next(err);
     });
 });
 

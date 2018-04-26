@@ -3,7 +3,7 @@
     <br>
     <div class='col'>
       <h4>MY PINS</h4>
-       
+
     </div>
 
     <div class='col'>
@@ -15,9 +15,9 @@
           <p>{{this.username}}</p>
           <img src="{{this.imageUrl}}" width="200px">
           <p>{{this.createdAt}}</p>
-          <a href="/pin/{{this._id}}/delete">
-            <button class="btn-sm btn-primary">Delete Pin</button>
-          </a>
         </li>
         <br> {{/each}}
       </ul>
+      <a href="/pin{{this._id}}/delete">
+        <button class="btn-sm btn-primary">Delete Pin</button>
+      </a>
