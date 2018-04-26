@@ -74,10 +74,9 @@ axios
         'Add a Pin</a> ' +
         '</div>' +
         '</div>';
-
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString,
-      });
+    });
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString,
     });
   })
   .catch(err => {
