@@ -61,8 +61,6 @@ axios
         infowindow.open(map, marker);
       });
 
-      db.heroku_whlr556h.pins('');
-
       var contentString =
         `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +
         `<p> Last comment at ${onePlace.createdAt}` +
