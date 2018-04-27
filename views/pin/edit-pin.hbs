@@ -2,7 +2,7 @@
   <div class="row">
     <br>
     <div class='col'>
-      <h4>MY PINS</h4>
+      <h1>MY PINS</h1>
 
     </div>
 
@@ -11,7 +11,8 @@
       {{#each pinList}}
       <ul>
         <li class="list-group-item">
-          <h2>{{this.comment}}</h2>
+          <h3>{{this.comment}}</h3>
+          <h3>{{this.place}}</h3>
           <p>{{this.username}}</p>
           <img src="{{this.imageUrl}}" width="200px">
           <p>{{this.createdAt}}</p>

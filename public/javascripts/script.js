@@ -9,7 +9,7 @@ document.addEventListener(
 // map
 
 const map = new google.maps.Map(document.getElementById('map'), {
-  zoom: 12,
+  zoom: 14,
   center: {
     lat: 48.855076,
     lng: 2.356184,
@@ -58,34 +58,55 @@ axios
         animation: google.maps.Animation.DROP,
       });
 
+      var latLng = marker.getPosition(); // returns LatLng object
+      map.setCenter(latLng); // setCenter takes a LatLng object
+
       marker.addListener('click', function() {
         infowindow.open(map, marker);
         setTimeout(function() {
           infowindow.close();
-        }, 3000);
+        }, 5000);
+        var latLng = marker.getPosition(); // returns LatLng object
+        map.setCenter(latLng); // setCenter takes a LatLng object
       });
 
-      var crea = new Date(onePlace.updatedAt).toString();
+      // var crea = new Date(Date.parse(onePlace.updatedAt)).toString();
+
+      // get date properly
+
+      var milli = Date.parse('Fri Apr 27 2018 09:34:07 GMT+0200 (CEST)');
+      var d = new Date(milli);
+      var crea = d.toLocaleString();
+      //
 
       var contentString =
-        `<p id="firstHeading" class="firstHeading">${onePlace.name}</p>` +
+        `<h3 id="firstHeading" class="firstHeading">${onePlace.name}</h3>` +
         `<p> Last comment on <b>${crea}</b>` +
-        `<br>` +
-        `<a href="/view/pin/${onePlace._id}">` +
-        '<br>View Pins</a> ' +
         '<br>' +
-        `<a href="/pin/${onePlace._id}">` +
-        'Add a Pin</a> ' +
-        '</div>' +
+        '<div class="signup">' +
+        `<br><a href="/view/pin/${onePlace._id}"><button class="btn-sm btn-primary">` +
+        ' View Pins</button></a>' +
+        '<br>' +
+        `<br><a href="/pin/${onePlace._id}"><button class="btn-sm btn-primary">` +
+        'Add a Pin</button></a> ' +
         '</div>';
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
       });
+
+      // delete pins after 12h
+      setTimeout(function() {
+        marker.setMap(null);
+      }, 1000 * 60 * 60 * 12);
     });
   })
   .catch(err => {
     alert('something went wrong');
   });
+
+// ------------
+
+// -------------
 
 const locationInput = document.querySelector('.location-input');
 const latInput = document.querySelector('.lat-input');
