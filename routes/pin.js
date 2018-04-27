@@ -58,7 +58,6 @@ router.get('/pin/:placeId', (req, res, next) => {
     .then(placeDetails => {
       res.locals.placeId = req.params.placeId;
       res.locals.place = placeDetails;
-      // res.send(req.params.placeId);
       res.render('pin/add-pin');
     })
     .catch(err => {

@@ -16,18 +16,6 @@ const map = new google.maps.Map(document.getElementById('map'), {
   },
 });
 
-// markers
-
-// new google.maps.Marker({
-//   position: {
-//     lat: 48.855076,
-//     lng: 2.356184,
-//   },
-//   map: map,
-//   title: 'Paris',
-//   animation: google.maps.Animation.DROP,
-// });
-
 // geolocalisation
 
 navigator.geolocation.getCurrentPosition(result => {
@@ -74,14 +62,14 @@ axios
 
       // get date properly
 
-      var milli = Date.parse('Fri Apr 27 2018 09:34:07 GMT+0200 (CEST)');
+      var milli = Date.parse(`${onePlace.updatedAt}`);
       var d = new Date(milli);
       var crea = d.toLocaleString();
       //
 
       var contentString =
         `<h3 id="firstHeading" class="firstHeading">${onePlace.name}</h3>` +
-        `<p> Last comment on <b>${crea}</b>` +
+        // `<p> Last comment on <b>${crea}</b>` +
         '<br>' +
         '<div class="signup">' +
         `<br><a href="/view/pin/${onePlace._id}"><button class="btn-sm btn-primary">` +
