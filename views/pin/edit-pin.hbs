@@ -12,10 +12,13 @@
       <ul>
         <li class="list-group-item">
           <h3>{{this.comment}}</h3>
-          <h3>{{this.place}}</h3>
+          <p>{{#each place}}{{this.name}}{{/each}}</p>
           <p>{{this.username}}</p>
           <img src="{{this.imageUrl}}" width="200px">
-          <p>{{this.createdAt}}</p>
+          <br>
+          <p>
+            <b>{{this.createdAt}}</b>
+          </p>
           <a href="/pin/{{this._id}}/delete">
             <button class="btn-sm btn-primary">Delete Pin</button>
           </a>

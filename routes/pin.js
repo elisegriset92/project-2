@@ -38,6 +38,7 @@ router.get('/last-pins', (req, res, next) => {
   }
   Pin.find()
     .sort({createdAt: -1})
+    .populate('place')
     .then(pinsFromDb => {
       res.render('pin/last-pin', {pinList: pinsFromDb});
     })
@@ -118,13 +119,10 @@ router.get('/view/pin/:placeId', (req, res, next) => {
     .then(placeDetails => {
       res.locals.placeId = req.params.placeId;
       res.locals.place = placeDetails;
+      return Pin.find({place: req.params.placeId})
+        .sort({createdAt: -1})
+        .populate('place');
     })
-    .catch(err => {
-      next(err);
-    });
-  Pin.find({place: req.params.placeId})
-    .sort({createdAt: -1})
-    .populate('place')
     .then(pinsFromDb => {
       res.render('pin/view-pin', {pinList: pinsFromDb});
       console.log(pinsFromDb);
@@ -142,13 +140,11 @@ router.get('/edit-pin/:userId', (req, res, next) => {
     .then(userDetails => {
       res.locals.userId = req.params.userId;
       res.locals.user = userDetails;
+      return Pin.find({user: req.params.userId})
+        .sort({createdAt: -1})
+        .populate('user')
+        .populate('place');
     })
-    .catch(err => {
-      next(err);
-    });
-  Pin.find({user: req.params.userId})
-    .sort({createdAt: -1})
-    .populate('user')
     .then(pinsFromDb => {
       res.render('pin/edit-pin', {pinList: pinsFromDb});
     })
