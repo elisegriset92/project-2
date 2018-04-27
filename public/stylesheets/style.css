@@ -78,6 +78,10 @@ h2 {
 .login {
   margin-top: 8vh; }
 
+.biglogo {
+  height: 13vh;
+  width: auto; }
+
 .sk-folding-cube {
   margin: 30px auto;
   width: 120px;
