@@ -30,6 +30,22 @@ router.get('/edit-pin', (req, res, next) => {
   res.render('pin/edit-pin');
 });
 
+//  GET a page with all the last pins
+
+router.get('/last-pins', (req, res, next) => {
+  if (!req.user) {
+    res.redirect('/auth/login');
+  }
+  Pin.find()
+    .sort({createdAt: -1})
+    .then(pinsFromDb => {
+      res.render('pin/last-pin', {pinList: pinsFromDb});
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 //  GET add pin page for a specific place
 
 router.get('/pin/:placeId', (req, res, next) => {
@@ -55,24 +71,40 @@ router.post(
   '/add-pin/:placeId',
   upload.single('blahUpload'),
   (req, res, next) => {
-    const {username, comment} = req.body;
-    const {originalname, secure_url} = req.file;
-    const place = req.params.placeId;
-    console.log(req.user._id);
-    Pin.create({
-      username,
-      comment,
-      imageName: originalname,
-      imageUrl: secure_url,
-      place: place,
-      user: req.user._id,
-    })
-      .then(() => {
-        res.redirect('/map/home-page');
+    if (!req.file) {
+      const {username, comment} = req.body;
+      const place = req.params.placeId;
+      Pin.create({
+        username,
+        comment,
+        place: place,
+        user: req.user._id,
       })
-      .catch(err => {
-        next(err);
-      });
+        .then(() => {
+          res.redirect('/map/home-page');
+        })
+        .catch(err => {
+          next(err);
+        });
+    } else {
+      const {username, comment} = req.body;
+      const place = req.params.placeId;
+      const {originalname, secure_url} = req.file;
+      Pin.create({
+        username,
+        comment,
+        imageName: originalname,
+        imageUrl: secure_url,
+        place: place,
+        user: req.user._id,
+      })
+        .then(() => {
+          res.redirect('/map/home-page');
+        })
+        .catch(err => {
+          next(err);
+        });
+    }
   }
 );
 
@@ -95,6 +127,7 @@ router.get('/view/pin/:placeId', (req, res, next) => {
     .populate('place')
     .then(pinsFromDb => {
       res.render('pin/view-pin', {pinList: pinsFromDb});
+      console.log(pinsFromDb);
     })
     .catch(err => {
       next(err);

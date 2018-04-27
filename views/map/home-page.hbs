@@ -1,20 +1,22 @@
 <p class="text-center">Do you want to know what the Q looks like in every places in Paris?</p>
 
 <h3>Search for a place</h3>
+<div class="signup">
 
-<form action="/process-add" method="POST" align="center">
-  <input type="sub" placeholder="Eiffel Tower" name="name" class="form-control  location-input " />
-  <br />
-
-  <!-- these will be set by out Place Autocomplete -->
-  <input type="hidden" name="name" class="location-input" />
-  <input type="hidden" name="latitude" class="lat-input" />
-  <input type="hidden" name="longitude" class="lng-input" />
-  <button class="btn-lg btn-primary">Search</button>
-
-</form>
-
-
+  <form action="/process-add" method="POST" align="center">
+    <input type="sub" placeholder="Eiffel Tower" name="name" class="form-control  location-input " />
+    <br />
+    <!-- these will be set by out Place Autocomplete -->
+    <input type="hidden" name="name" class="location-input" />
+    <input type="hidden" name="latitude" class="lat-input" />
+    <input type="hidden" name="longitude" class="lng-input" />
+    <button class="btn-lg btn-primary">Search</button>
+  </form>
+  <br>
+  <a href="/last-pins">
+    <button class="btn-lg btn-info">View the last pins in Paris</button>
+  </a>
+</div>
 
 <br>
 
